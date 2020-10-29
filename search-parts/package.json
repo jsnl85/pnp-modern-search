@@ -8,6 +8,8 @@
     "main": "lib/index.js",
     "scripts": {
         "build": "gulp bundle",
+        "package-test": "(gulp clean) & (gulp build) & (gulp bundle) & (gulp package-solution) & (gulp serve)",
+        "package": "(gulp clean --ship) & (gulp build --ship) & (gulp bundle --ship) & (gulp package-solution --ship) & (copy /Y .\\sharepoint\\solution\\*.sppkg ..\\Packaged)",
         "clean": "gulp clean",
         "test": "gulp test",
         "serve": "gulp bundle --custom-serve && webpack-dev-server --mode development --config ./webpack.js --env.env=dev"
